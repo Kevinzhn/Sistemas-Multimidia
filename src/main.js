@@ -1,0 +1,50 @@
+ /** @type {HTMLCanvasElement} */   
+
+const jogoCanvas = document.getElementById("tetris");
+const jogoCtx = jogoCanvas.getContext('2d');
+const gameElement = document.getElementById("game");
+const pontoElemento = document.getElementById("ponto");
+const ponto1Elemento = document.getElementById("ponto1");
+const nivelElemento = document.getElementById("nivel");
+const linhaElemento = document.getElementById("linha");
+const proximaPeca1elemento = document.getElementById('proximaPeca1');
+const proximaPeca2elemento = document.getElementById('proximaPeca2');
+const jogarNovamenteBotao = document.getElementById('jogarNovamenteBotao');
+const sairBotao = document.getElementById('sairBotao');
+const gameOverElement = document.getElementById("game-over");
+const pecaElement = document.getElementById("informacao-peca");
+const homeElement = document.getElementById("home");
+const modoFacilBotao = document.getElementById("modoFacil");
+const modoMedioBotao = document.getElementById("modoMedio");
+const modoDificilBotao = document.getElementById("modoDificil");
+const rankBotao = document.getElementById("rankBotao");
+const rankConteinerElement = document.getElementById("rankConteiner");
+const menuBotaoElement = document.getElementById("menu");
+const rankInfoPlayer = document.getElementById("rankInfoPlayer");
+const sairJogoElemente = document.getElementById("sairJogo");
+const LINHA = 19;
+const COLUNA = 10;
+const PX = 45;
+const corPadrao = "#0c0d0e";
+
+let nivel = 1;
+let speed = 1000;
+let linha = 0;
+let ponto = 0;
+let dropStart = Date.now();
+let linhaNivel = 0;
+let tela = [];
+let peca = gerarPeca();
+let proximaPeca1;
+let proximaPeca2;
+let mover = false;
+
+document.addEventListener("keydown", controle);
+jogarNovamenteBotao.addEventListener("click", jogarNovamente);
+sairBotao.addEventListener("click", sair);
+modoFacilBotao.addEventListener("click", comecarJogoFacil);
+modoMedioBotao.addEventListener("click", comecarJogoMedio);
+modoDificilBotao.addEventListener("click", comecarJogoDificil);
+rankBotao.addEventListener("click", rank);
+menuBotaoElement.addEventListener("click", menu);
+sairJogoElemente.addEventListener("click", sairDojogo);

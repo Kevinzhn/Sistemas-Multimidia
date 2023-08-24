@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="../src/site.css">
+</head>
+
+<body>
+    <div id="home">
+        <div id="logo">
+            <div class="logo red">T</div>
+            <div class="logo pink">e</div>
+            <div class="logo blue">t</div>
+            <div class="logo yellow">r</div>
+            <div class="logo purple">i</div>
+            <div class="logo orange">s</div>
+        </div>
+        <div class="dificuldade" class="home">
+            <button id="modoFacil" class="modo">Fácil</button> <br>
+            <button id="modoMedio" class="modo">Medio</button> <br>
+            <button id="modoDificil" class="modo">Dificil</button> <br>
+            <button id="rankBotao">Rank</button>
+        </div>
+
+    </div>
+    <div id="rankConteiner" class="hidden">
+        <div id="rankInfo">
+            <p>Nome</p>
+            <p>Ponto</p>
+            <p>Linha</p>
+            <p>Nível</p>
+            <p>Data</p>
+        </div>
+        <div id="rankInfoPlayer">
+
+
+        </div>
+        <button id="menu">Menu</button>
+    </div>
+
+    <div id="game-over" class="hidden">
+        <div class="game-over">
+            <p>Game Over<br></p>
+            <p>Pontos <br> <span id="ponto1"></span></p>
+            <button id="jogarNovamenteBotao" class="active">Jogar novamente</button>
+            <input type="text" id="name" name="name" placeholder="Insere o seu nome">
+            <button id="sairBotao" >Sair e Salvar</button>
+        </div>
+        
+    </div>
+
+    <div id="game" class="hidden">
+        <div class="jogo">
+            <div id="tela">
+                <canvas id="tetris" width="450" height="855"></canvas>
+            </div>
+            <div class="informacao">
+                <div id="informacao-peca">
+                    <p>Próxima peça:
+                    <p><br><img src="" id="proximaPeca1" /><br>
+                    <img src="" id="proximaPeca2" />
+                </div>
+                <div class="informacao-ponto">
+                    <p>Pontos <br></p><span id="ponto"></span>
+                    <p>Nível <br></p><span id="nivel"></span>
+                    <p>Linha <br></p><span id="linha"> </span>
+                </div>
+                <div>
+                    <button id="sairJogo">Sair</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../src/estrutura.js"></script>
+    <script src="../src/peca.js"></script>
+    <script src="../src/solicitacaoHTTP.js"></script>
+    <script src="../src/funcao.js"></script>
+    <script src="../src/main.js"></script>
+
+</body>
+
+</html>
